@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicky Williams</title>
+    <link rel="icon" href="assets/flower.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/8474a553d1.js" crossorigin="anonymous"></script> 
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init({
+        publicKey: "as58ZG7bMN1XqFsJv",
+        });
+        })();
+    </script>
+  </head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal-logo" src="./assets/NWLogo.png" alt=""> 
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link" onclick="toggleModal()">
+            <a href="#about" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            ">About</a>
+          </li>
+          <li class="nav__link">
+            <a href="#projects" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            ">Projects</a>
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a href="mailto:nwilliams1480@gmail.com" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--pink
+            ">Contact</a>
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a href="#" class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+            "><i class="fa-solid fa-circle-half-stroke"></i>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">
+            Hey! <br><span class="text--pink">I'm Nicky. </span>
+          </h1>
+          <p class="header__para">
+            I'm a <strong class="text--pink">creative Frontend Engineer</strong> dedicated to crafting responsive and high-performance web apps. My mission is to deliver exceptional user experiences that make a positive impact in the world.
+            <br>
+            Here's a bit more <b class="text--pink click" onclick="toggleModal()">about me.
+          </p>
+          <div class="social__list">
+            <a href="https://linkedin.com/in/nicky-williams-166863264" target="_blank" class="social__link click">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/nickywilliams114" target="_blank" class="social__link click">
+              <i class="fa fa-github"></i>
+            </a>
+            <a href="https://nwilliams1480@gmail.com" target="_blank" class="social__link click">
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a href="./assets/SoftwareEngineeringResume2024.pdf" target="_blank" class="social__link click">
+              <i class="fa fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>   
+      </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll_icon click"></div>
+      </a> 
+      <div class="modal">
+        <div vlass="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+          <p class="modal__para">
+            I'm an <b class="text--pink">innovative software engineer</b> with a strong drive to deliver top quality web applications.  I possess an invaluable amount of determination to meet and exceed employer expecpectations in crafting beautiful and unique<b class="text--pink">user experiences.</b> 
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img"src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="Html Logo" class="language__img">
+              <span class="language__name">HTML</span>
+            </figure> 
+            <figure class="modal__language">
+              <img class="modal__language--img"src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png">
+              <span class="language__name">CSS</span>
+            </figure> 
+            <figure class="modal__language">
+              <img class="modal__language--img"src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png">
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png">
+              <span class="language__name">React</span>
+            </figure> 
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fa fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h3 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities</h3>
+          <form id="contact__form" onsubmit="contact()">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" type="text" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">Send it my way</button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fa fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">Thanks for the message!  I look forward to speaking with you soon.</div>
+        </div>
+      </div>
+      <img src="./assets/semi circle.svg" class="shape shape--0">  
+      <img src="./assets/circle.svg" class="shape shape--1">  
+      <img src="./assets/squiggly.svg" class="shape shape--2">  
+      <img src="./assets/circle.svg" class="shape shape--3">  
+      <img src="./assets/triangle.svg" class="shape shape--4">  
+      <img src="./assets/circle.svg" class="shape shape--5">  
+      <img src="./assets/squiggly.svg" class="shape shape--6">  
+      <img src="./assets/circle.svg" class="shape shape--7">  
+      <img src="./assets/semi circle.svg" class="shape shape--8">  
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="text--pink">projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="./assets/design-illustration-2.6da6a00b20c07c4a9b65d1870679e1b8.svg" class="project__img" alt>
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    React2Templates Project
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    Html, CSS, JavaScript
+                  </h4>
+                  <p class="project__description--para">
+                    This was my first major project focusing heavily on HTML and CSS building this website from scratch.  It helped me understand the concepts of each language and how they come together in providing a wonderful user experience. It was challenging yet enjoyable. 
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://nickywilliams114.github.io/React2Templates-Project/" class="project__description--link">
+                      <i class="fa fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fa fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="./assets/Undraw_Books.svg" class="project__img" alt>
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Library E-commerce Project
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    Html, CSS, JavaScript
+                  </h4>
+                  <p class="project__description--para">
+                    This was a little library book project that focuses on CSS best practices like flexbox and responsive design.  I thoroughly enjoyed the little details of this project.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://nickywilliams114.github.io/LibraryEcommerceProject/" class="project__description--link">
+                      <i class="fa fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fa fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure class="footer__logo--img">
+            <img src="./assets/NWLogo.png" class="footer__logo--img" alt="">
+          </figure> 
+          <div class="footer__social--list">
+            <a href="https://github.com/nickywilliams114"  class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+              ">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/nicky-williams-166863264" 
+            class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+              ">
+              LinkedIn
+            </a>
+            <a href="#" onclick="toggleModal()" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+              Contact
+            </a>
+            <a href="./assets/SoftwareEngineeringResume2024.pdf"  
+            class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+              Resume
+            </a>
+          </div>
+          <div class="footer__copyright">Copyright © 2025 Nicky Williams</div>
+        </div>
+        </div>
+      </footer>
+    </body>
+    </html>
+
+
+      
+      
+       
+          
+          
+
+               
+
+              
+
+
+
+
+
+
+
+
+
+      
+
+  
+  
+  
+  
+  
+  
+          
+          
+          
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          
+          
+        
+  
+        
+    
+  
